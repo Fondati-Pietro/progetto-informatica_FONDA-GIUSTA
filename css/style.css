@@ -257,8 +257,14 @@ footer {
     width: 10%;
 }
 
-#register_verifica {
+#register_verifica_no {
     text-align: center;
     background-color: crimson;
+    color: white;
+}
+
+#register_verifica_ok {
+    text-align: center;
+    background-color: green;
     color: white;
 }

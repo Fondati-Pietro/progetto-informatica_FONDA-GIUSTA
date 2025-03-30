@@ -26,13 +26,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($user) {
         // Se l'utente esiste già
-        echo "<h4 id='register_verifica'>Nome utente già in uso. Scegli un altro nome</h4>";
+        echo "<h4 id='register_verifica_no'>Nome utente già in uso. Scegli un altro nome</h4>";
     } else {
         // Se l'utente non esiste, procedi con la registrazione
         $passwordHash = password_hash($password, PASSWORD_BCRYPT);
         $stmt = $conn->prepare("INSERT INTO utenti (nomeUtente, password_hash) VALUES (?,?)");
         if ($stmt->execute([$nomeUtente, $passwordHash])) {
-            echo "Registrazione completata. Ora puoi accedere.";
+            echo "<h4 id='register_verifica_ok'>Registrazione completata. Ora puoi accedere</h4>";
         } else {
             echo "Errore nella registrazione.";
         }
