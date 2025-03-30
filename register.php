@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($user) {
         // Se l'utente esiste già
-        echo "Nome utente già in uso. Scegli un altro nome.";
+        echo "<h4 id='register_verifica'>Nome utente già in uso. Scegli un altro nome</h4>";
     } else {
         // Se l'utente non esiste, procedi con la registrazione
         $passwordHash = password_hash($password, PASSWORD_BCRYPT);
